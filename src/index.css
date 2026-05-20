@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased selection:bg-electric selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-panel-electric {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-electric/20 shadow-2xl hover:border-electric/40 transition-all duration-300;
+  }
+
+  .glass-panel-cyan {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-cyan-400/20 shadow-2xl hover:border-cyan-400/40 transition-all duration-300;
+  }
+  
+  .text-glow-electric {
+    text-shadow: 0 0 20px rgba(0, 82, 255, 0.6), 0 0 40px rgba(0, 82, 255, 0.2);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 240, 255, 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(0, 82, 255, 0.4);
+  }
+}
+
+/* Custom Float Animations for Background Spheres */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px) scale(1.15);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(50px) translateX(-40px) scale(0.9);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-25px) scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 16s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 12s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f172a;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0052ff;
+  box-shadow: 0 0 10px rgba(0, 82, 255, 0.5);
+}
