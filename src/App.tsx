@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -15,16 +16,11 @@ function App() {
       <ParticleBackground />
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Timeline />
-        <Projects />
-        <Contact />
+        <Outlet />
       </main>
       <Footer />
     </div>
   );
-}
+    }
 
 export default App;
